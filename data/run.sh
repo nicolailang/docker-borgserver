@@ -54,9 +54,10 @@ for keyfile in $(find "${SSH_KEY_DIR}/clients" -type f); do
 	cat $keyfile >> /home/borg/.ssh/authorized_keys
 done
 
-chown -R borg: /backup
-chown borg: /home/borg/.ssh/authorized_keys
+chown -R borg /backup
+chown borg /home/borg/.ssh/authorized_keys
 chmod 600 /home/borg/.ssh/authorized_keys
+chmod 700 /backup
 
 echo " * Init done!"
 echo "########################################################"
