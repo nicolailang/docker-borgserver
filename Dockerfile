@@ -11,7 +11,7 @@ VOLUME /backup
 
 #ENV DEBIAN_FRONTEND noninteractive
 
-RUN apk update && apk add shadow borgbackup openssh
+RUN apk update && apk add shadow :borgbackup openssh
 RUN useradd -s /bin/bash -m borg ; \
 	mkdir /home/borg/.ssh && chmod 700 /home/borg/.ssh && chown borg: /home/borg/.ssh ; \
 	mkdir /run/sshd
