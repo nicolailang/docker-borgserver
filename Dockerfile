@@ -2,7 +2,7 @@
 # Dockerfile to build borgbackup server images
 # Based on Debian
 ############################################################
-FROM debian:latest
+FROM ubuntu:18.04
 
 # Volume for SSH-Keys
 VOLUME /sshkeys
