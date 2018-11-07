@@ -25,6 +25,5 @@ AllowTcpForwarding no
 X11Forwarding no
 PermitTTY no
 PrintMotd no
-UsePrivilegeSeparation sandbox
 PermitTunnel no
 Subsystem	sftp	/bin/false
