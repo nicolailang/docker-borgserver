@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-MAINTAINER Nicolai W Hjorth <nicolai@hjorth.com>
+LABEL maintainer="nicolai@hjorth.com"
 
 # Volume for SSH-Keys
 VOLUME /sshkeys
