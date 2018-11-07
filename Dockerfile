@@ -1,4 +1,5 @@
-FROM ubuntu:18.04
+#FROM ubuntu:18.04
+FROM alpine
 
 LABEL maintainer="nicolai@hjorth.com"
 
@@ -8,9 +9,9 @@ VOLUME /sshkeys
 # Volume for borg repositories
 VOLUME /backup
 
-ENV DEBIAN_FRONTEND noninteractive
+#ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt-get -y --no-install-recommends install borgbackup openssh-server && apt-get clean
+RUN apk update && apk add shadow borgbackup openssh
 RUN useradd -s /bin/bash -m borg ; \
 	mkdir /home/borg/.ssh && chmod 700 /home/borg/.ssh && chown borg: /home/borg/.ssh ; \
 	mkdir /run/sshd
